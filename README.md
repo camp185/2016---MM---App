@@ -1,6 +1,6 @@
-# Hello World PhoneGap Application [![bitHound Score][bithound-img]][bithound-url]
+# Monkey Meter App[![bitHound Score][bithound-img]][bithound-url]
 
-> A Hello World application built with PhoneGap
+> An application built with PhoneGap
 
 ## Usage
 
