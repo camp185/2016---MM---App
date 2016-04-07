@@ -27,16 +27,216 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <link rel="stylesheet" type="text/css" href="css/mm-2016.css" />
+		<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+        <title>Monkey Meter App</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+       <div class="app">
+			<ul class="navigation">
+				<li class="nav-item"><a href="#" id="rate">Rate Your Road Rage!</a></li>
+				<li class="nav-item"><a href="#" id="topragers">Top Raging Cites</a></li>
+				<li class="nav-item"><a href="#" id="recent">Recent Ratings</a></li>
+				<li class="nav-item"><a href="#" id="forecast" onclick="getForecast()">Road Rage Forecast</a></li>
+				<li class="nav-item"><a href="#" id="news">Recent News</a></li>
+			</ul>
+			
+		
+			<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+			<label for="nav-trigger"></label>
+
+			<div class="site-wrap">
+
+				<img id="banner" src="img/banner.jpg" alt="Monkey Meter - The original road rage traffic reporter">
+				<div class="maincontent">
+				
+				
+				<div id="rateyourroadrage" class="pages">
+				
+					<h1>Hate tailgaters?</h1>
+					<p>Vent a little, and share today's experience with a quick road rage rating. </p>
+					<p>DO NOT USE THIS APP WHILE DRIVING! C'MON.</p>
+				
+
+			
+					<form method="post" action="" name="mobile">
+						<input type="hidden" name="ref" value="mobile">
+
+						<fieldset>
+						<legend>Rate Your Road Rage!</legend>
+
+						<label for="r-1">
+						<input type="radio" value="1" name="score" id="r-1"> <span>None - Nice drive.</span>
+						</label>
+
+						<label for="r-2">
+						<input type="radio" value="2" name="score" id="r-2"> <span>Low - One or two sleepers.</span>
+						</label>
+
+						<label for="r-3">
+						<input type="radio" value="3" name="score" id="r-3"> <span>Ave. - Always someone rude.</span>
+						</label>
+
+						<label for="r-4">
+						<input type="radio" value="4" name="score" id="r-4"> <span>High - Lots of monkeys today.</span>
+						</label>
+						
+						<label for="r-5">
+						<input type="radio" value="5" name="score" id="r-5"> <span>Extreme danger on roads today.</span>
+						</label>
+						</fieldset>
+						<input type ="hidden" name="city" id="city">
+						<p>We track your city location for this application. If you're okay with that, then rate your city now!</p>
+						<p id="geolocation" class="blink">Finding location...</p>
+
+						<p><input class="fsSubmitButton" type="submit" value="Rate your city" name="raterage" id="raterage"></p>		
+					</form>
+				</div>
+
+				<script>
+				submitRage();
+				
+				</script>
+				
+				<div id="recentragers" class="pages">
+				<h2>Recent Road Ragers</h2>
+					<p>Recent ratings in your area. Data is updated every 15 minutes.</p>
+					<p><a href="#" name="updateratings" onclick="getScores();">Refresh</a></p>
+					<div id="recentscores"></div>
+					<h3>Ratings Defined</h3>
+					<ul style="list-style:none;">
+						<li>1 - 2 Low</li>
+						<li>2 - 3 Ave</li>
+						<li>3 - 4 High</li>
+						<li>4 - 5 Dangerous</li>
+					</ul>					
+					<div class="sponsor"></div>				
+				</div>
+				
+				<div id="forecastpage" class="pages">
+				<h2>Road Rage Forecast</h2>
+					<p>Ratings from users like you are what makes this possible.</p>
+					<div id="forecastforcity"></div>
+					<h3>Ratings Defined</h3>
+					<ul style="list-style:none;">
+						<li>1 - 2 Low</li>
+						<li>2 - 3 Ave</li>
+						<li>3 - 4 High</li>
+						<li>4 - 5 Dangerous</li>
+					</ul>
+					<div class="sponsor"></div>
+				</div>
+				
+				<div id="topragerspage" class="pages">
+				<h2>Top Raging Cities</h2>
+					<p>Ratings from users like you are what makes this possible.</p>
+					<div id="topragerspagehtml"></div>
+					<h3>Ratings Defined</h3>
+					<ul style="list-style:none;">
+						<li>1 - 2 Low</li>
+						<li>2 - 3 Ave</li>
+						<li>3 - 4 High</li>
+						<li>4 - 5 Dangerous</li>
+					</ul>
+					<div class="sponsor"></div>
+				</div>
+				
+				
+				<div id="newspage" class="pages">
+				
+				<h2>Recent News</h2>
+					<div id="newsfeed">Reading News Feed...</div>
+					<div class="sponsor"></div>
+				</div>
+				
+			</div>  
+			
+			
+		</div>           
+	</div>           
+	 
+		<script>
+		showPageContent();
+		</script>				
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAQhU7cZppve1qjiR6P_-twtXG0CMuh43o"></script> 
+		<script type="text/javascript"> 
+		//making links open in new device default browser
+		$("#newsfeed").load("http://www.monkeymeter.com/json/get-news.php");
+		$("#topragerspagehtml").load("http://www.monkeymeter.com/json/top-ragers.php");
+		$("a[target='_system']").click(function(e){
+			e.preventDefault();
+			window.open($(e.currentTarget).attr('href'), '_system', '');
+			});
+		
+		//getting location
+		var geocoder;
+		var theCity = "";
+		var city = "";
+
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+		} 
+
+		//Get the latitude and the longitude;
+		function successFunction(position) {
+			var lat = position.coords.latitude;
+			var lng = position.coords.longitude;
+			codeLatLng(lat, lng)
+		}
+
+		function errorFunction(){
+			alert("Geocoder failed due to: " + status + ".");
+		}
+
+		function initialize() {
+			geocoder = new google.maps.Geocoder();
+		  }
+
+		function codeLatLng(lat, lng) {
+			var latlng = new google.maps.LatLng(lat, lng);
+			initialize();
+
+			geocoder.geocode({'location': latlng}, function(results, status) {
+
+				if (status === google.maps.GeocoderStatus.OK) {
+					if (results[0]) {
+					//for (var i = 0; i < results.length; i++) {
+                        //if (results[i].types[0] === "locality") {
+
+                            city 	= results[0].address_components[3].short_name;
+                            var state 	= results[0].address_components[5].short_name;
+							city = city + ", " + state;
+							
+							document.getElementById("geolocation").innerHTML=city;
+							document.getElementById("geolocation").classList.remove("blink");
+							document.getElementById("city").value = city;
+							getScores();
+							
+							//get sponsors
+							var sponsorCity = city.replace(/ /g, '%20');
+							$(".sponsor").load("http://www.monkeymeter.com/json/get-sponsors.php?city="+sponsorCity );
+
+                       // }
+                    //}
+
+					
+					}
+				} 
+				
+				else {
+				document.getElementById("geolocation").innerHTML=status;
+				  alert("Location not found" + status);
+				}
+			});
+		}
+
+
+		</script> 
+
+        <!-- //
+        https://developers.google.com/maps/documentation/javascript/geocoding#GeocodingAddressTypes 
+        navigator.geolocation.watchPosition(onSuccess, onError, { enableHighAccuracy: true });-->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
