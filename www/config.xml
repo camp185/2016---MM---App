@@ -3,17 +3,17 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.helloworld"
-        version   = "1.0.0">
+        id        = "com.monkeymeter.mobile"
+        version   = "1.2.0">
 
-    <name>Hello World</name>
+    <name>Monkey Meter</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Monkey Meter allows users to rate their road rage, see recent ratings, and get the road rage forecast.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="http://www.monkeymeter.com" email="camp185@gmail.com">
+            Robert Campbell
     </author>
 
     <!--
@@ -39,7 +39,7 @@
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
     <!--
         Define a specific version of PhoneGap to build into your app.
-        <preference name="phonegap-version"       value="3.5.0" />
+        <preference name="phonegap-version"       value="3.5.0" Omit for latest version />
     -->
 
     <!-- Plugins -->
