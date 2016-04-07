@@ -1,0 +1,161 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+body {
+background-color:#343434;
+
+	
+	font-size:16px;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    height:100%;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;                   /* text area width */
+	background-color:#E4E4E4;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {    }
+}
+#banner {width:100vw;margin:-10px 0 0 -10px;}
+h1 {font-size:1.75em;}
+
+h1, h2, h3, p, table, li {margin-right:10px;}
+
+#score {height:100px; width:400px;}
+#score option {padding:0.3em 0;}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+/*For radio buttons*/
+/* HTML5 Boilerplate accessible hidden styles */
+[type="radio"] {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px;
+}
+
+/* One radio button per line */
+label {
+  display: block;
+  cursor: pointer;
+  line-height: 2.5;
+  font-size: 1.25em;
+}
+
+[type="radio"] + span {
+  display: block;
+}
+
+/* the basic, unchecked style */
+[type="radio"] + span:before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.25em;
+  border-radius: 1em;
+  border: 0.125em solid #fff;
+  box-shadow: 0 0 0 0.15em #000;
+  margin-right: 0.75em;
+  transition: 0.5s ease all;
+}
+
+/* the checked style using the :checked pseudo class */
+[type="radio"]:checked + span:before {
+  background: #E91616;
+  box-shadow: 0 0 0 0.25em #000;
+}
+
+/* never forget focus styling */
+[type="radio"]:focus + span:after {
+  /*content: '\0020\2190';*/
+  font-size: 1.1em;
+  line-height: 1em;
+  vertical-align: -0.025em;
+}
+
+
+
+fieldset {
+  font-size: 0.7em;
+  border: 2px solid #000;
+  padding: 1em 0em 1em 1em;
+  border-radius: 0.5em;
+  width:305px;
+}
+
+legend {
+  color: #fff;
+  background: black;
+  padding: 0.25em 1em;
+  border-radius: 1em;
+  font-size:1.75em;
+}
+
+
+
+.fsSubmitButton {color: #fff; background: #E91616;  padding: 5px;  border-radius:7px;  font-size:1.5em;border:2px solid #fff;cursor: pointer;}
+.fsSubmitButton:hover {border:2px solid #343434;cursor: pointer;}
