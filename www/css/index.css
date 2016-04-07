@@ -16,67 +16,38 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
-
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
+background-color:#343434;
+
+	
+	font-size:16px;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
     height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
+    margin:0;
+    padding:0;
     width:100%;
 }
 
 /* Portrait layout (default) */
 .app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;                   /* text area width */
+	background-color:#E4E4E4;
 }
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
+    .app {    }
 }
+#banner {width:100vw;margin:-10px 0 0 -10px;}
+h1 {font-size:1.75em;}
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
+h1, h2, h3, p, table, li {margin-right:10px;}
+
+#score {height:100px; width:400px;}
+#score option {padding:0.3em 0;}
 
 .event {
     border-radius:4px;
@@ -113,3 +84,78 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+/*For radio buttons*/
+/* HTML5 Boilerplate accessible hidden styles */
+[type="radio"] {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px;
+}
+
+/* One radio button per line */
+label {
+  display: block;
+  cursor: pointer;
+  line-height: 2.5;
+  font-size: 1.25em;
+}
+
+[type="radio"] + span {
+  display: block;
+}
+
+/* the basic, unchecked style */
+[type="radio"] + span:before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.25em;
+  border-radius: 1em;
+  border: 0.125em solid #fff;
+  box-shadow: 0 0 0 0.15em #000;
+  margin-right: 0.75em;
+  transition: 0.5s ease all;
+}
+
+/* the checked style using the :checked pseudo class */
+[type="radio"]:checked + span:before {
+  background: #E91616;
+  box-shadow: 0 0 0 0.25em #000;
+}
+
+/* never forget focus styling */
+[type="radio"]:focus + span:after {
+  /*content: '\0020\2190';*/
+  font-size: 1.1em;
+  line-height: 1em;
+  vertical-align: -0.025em;
+}
+
+
+
+fieldset {
+  font-size: 0.7em;
+  border: 2px solid #000;
+  padding: 1em 0em 1em 1em;
+  border-radius: 0.5em;
+  width:305px;
+}
+
+legend {
+  color: #fff;
+  background: black;
+  padding: 0.25em 1em;
+  border-radius: 1em;
+  font-size:1.75em;
+}
+
+
+
+.fsSubmitButton {color: #fff; background: #E91616;  padding: 5px;  border-radius:7px;  font-size:1.5em;border:2px solid #fff;cursor: pointer;}
+.fsSubmitButton:hover {border:2px solid #343434;cursor: pointer;}

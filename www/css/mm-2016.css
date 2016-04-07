@@ -1,0 +1,94 @@
+/*
+#############################################
+## MISC
+#############################################
+*/
+
+#banner {position:relative; top:4em;left:10px;}
+
+.maincontent {background-color:#fff; padding:10px 10px 20px 10px; }
+.pages {min-height: 1500px;position:relative; top:4em;display:block;padding-bottom:40px;}
+.trend {margin:10px 0;}
+#forecastbyday {border-collapse: collapse;}
+#forecastbyday td {border:1px solid black; padding:5px; text-align:center; width:18%; }
+.sponsor {margin:20px 0;}
+#news {display:inline-block; width:100%;}
+/*
+#############################################
+## MENU AND SLIDE EFFECT
+#############################################
+*/
+
+
+
+.navigation {
+    list-style: none;
+    background: #111;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+	margin:10px 0 0 0;
+	padding:5px;
+}
+
+.navigation li {line-height:2.5em; font-size:1em; font-weight:bold; color:#fff;padding:0; border-bottom:1px solid #999;}
+.navigation li a {color:#fff; text-decoration:none; }
+
+.site-wrap {
+    min-width: 100%;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 1;
+
+
+	
+}
+
+.nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+	background-color:red;
+}
+
+label[for="nav-trigger"] {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 5;
+}
+
+label[for="nav-trigger"] {
+
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+    background-size: contain;
+
+}
+
+.nav-trigger:checked + label {
+    left: 215px;
+
+}
+
+.nav-trigger:checked ~ .site-wrap {
+    left: 200px;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}
+
+.nav-trigger + label, .site-wrap {
+    transition: left 0.2s;
+}
+
+body {
+    overflow-x: hidden;
+}
