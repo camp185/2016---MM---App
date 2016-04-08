@@ -92,3 +92,14 @@ label[for="nav-trigger"] {
 body {
     overflow-x: hidden;
 }
+
+
+/*
+#############################################
+## FORECAST
+#############################################
+*/
+#theforecast {display:inline-block; margin:10px 0;}
+.forecasting {float:left; display:inline;border:1px solid #343434;display:block;}
+.fcheader {background-color:#343434; color:#fff; text-align:center; padding:5px; font-weight:bold;}
+.fcrating { text-align:center; padding:5px; font-weight:bold;}
