@@ -217,31 +217,31 @@ for (var i = 0; i < 5; i++){
 		{
 		ratings[i]="None";
 		fontcolor[i] = "blue";
-		ratingpic[i]="img/none.bmp";
+		ratingpic[i]="img/monkey-ok.png";
 		}
 	if (fcScore[i]  > 1)
 		{
 		ratings[i]="Low";
 		fontcolor[i] = "green";
-		ratingpic[i]="img/low.bmp";
+		ratingpic[i]="img/monkey-ok.png";
 		}
 	if (fcScore[i]  > 2)
 		{
 		ratings[i]="Ave";
 		fontcolor[i] = "black";
-		ratingpic[i]="img/moderate.bmp";
+		ratingpic[i]="img/monkey-ave.png";
 		}
 	if (fcScore[i] > 3)
 		{
 		ratings[i]="High";
 		fontcolor[i] = "orange";
-		ratingpic[i]="img/high.bmp";
+		ratingpic[i]="img/monkey-high.png";
 		}
 	if (fcScore[i]  > 4)
 		{
 		ratings[i]="Dangerous"; 
 		fontcolor[i] = "red";
-		ratingpic[i]="img/extreme.bmp";
+		ratingpic[i]="img/monkey-dan.png";
 		} 
 } 	
 
@@ -268,7 +268,7 @@ forecastHTML = forecastHTML + "<td  bgcolor=\"#343434\"><strong><span style=\"co
 forecastHTML = forecastHTML + "<td  bgcolor=\"#343434\"><strong><span style=\"color:#fff\">Tomorrow</span></strong></td>";
 forecastHTML = forecastHTML + "<td  bgcolor=\"#343434\"><strong><span style=\"color:#fff\">" + day3 + "</span></strong></td>";
 forecastHTML = forecastHTML + "<td  bgcolor=\"#343434\"><strong><span style=\"color:#fff\">" + day4 + "</span></strong></td>";
-forecastHTML = forecastHTML + "<td  bgcolor=\"#343434\"><strong><span style=\"color:#fff\">" + day5 + "</span></strong></td>";
+//forecastHTML = forecastHTML + "<td  bgcolor=\"#343434\"><strong><span style=\"color:#fff\">" + day5 + "</span></strong></td>";
 forecastHTML = forecastHTML + "</tr>";
 
 forecastHTML = forecastHTML + "<tr>";
@@ -276,7 +276,7 @@ forecastHTML = forecastHTML + "<td  ><img src=\"" + ratingpic[0] + "\"><br>"  + 
 forecastHTML = forecastHTML + "<td  ><img src=\"" + ratingpic[1] + "\"><br>"  + ratings[1] + "<br>" +  fcScore[1].toFixed(2) + "</td>";
 forecastHTML = forecastHTML + "<td  ><img src=\"" + ratingpic[2] + "\"><br>"  + ratings[2] + "<br>" +  fcScore[2].toFixed(2) + "</td>";
 forecastHTML = forecastHTML + "<td  ><img src=\"" + ratingpic[3] + "\"><br>"  + ratings[3] + "<br>" +  fcScore[3].toFixed(2) + "</td>";
-forecastHTML = forecastHTML + "<td  ><img src=\"" + ratingpic[4] + "\"><br>"  + ratings[4] + "<br>" +  fcScore[4].toFixed(2) + "</td>";
+//forecastHTML = forecastHTML + "<td  ><img src=\"" + ratingpic[4] + "\"><br>"  + ratings[4] + "<br>" +  fcScore[4].toFixed(2) + "</td>";
 forecastHTML = forecastHTML + "</table>";
 
 $('#forecastforcity').html(forecastHTML);
