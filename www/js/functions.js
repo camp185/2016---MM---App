@@ -262,22 +262,35 @@ else {
 
 forecastHTML = "<p>Current rating in your area is: <strong><span style=\"color:" + fontcolor[0] + " \">" + cityScore.toFixed(2) + "</span></strong>, and the recent trend is that "+altarrow+".<br><img class=\"trend\" src=\"img/" + arrow + "\" alt=\"" + altarrow + "\"></p>";
 
-forecastHTML = forecastHTML + "<table id=\"forecastbyday\">";
-forecastHTML = forecastHTML + "<tr>";
-forecastHTML = forecastHTML + "<td  bgcolor=\"#343434\"><strong><span style=\"color:#fff\">Today</span></strong></td>";
-forecastHTML = forecastHTML + "<td  bgcolor=\"#343434\"><strong><span style=\"color:#fff\">Tomorrow</span></strong></td>";
-forecastHTML = forecastHTML + "<td  bgcolor=\"#343434\"><strong><span style=\"color:#fff\">" + day3 + "</span></strong></td>";
-forecastHTML = forecastHTML + "<td  bgcolor=\"#343434\"><strong><span style=\"color:#fff\">" + day4 + "</span></strong></td>";
-//forecastHTML = forecastHTML + "<td  bgcolor=\"#343434\"><strong><span style=\"color:#fff\">" + day5 + "</span></strong></td>";
-forecastHTML = forecastHTML + "</tr>";
 
-forecastHTML = forecastHTML + "<tr>";
-forecastHTML = forecastHTML + "<td  ><img src=\"" + ratingpic[0] + "\"><br>"  + ratings[0] + "<br>" +  fcScore[0].toFixed(2) + "</td>";
-forecastHTML = forecastHTML + "<td  ><img src=\"" + ratingpic[1] + "\"><br>"  + ratings[1] + "<br>" +  fcScore[1].toFixed(2) + "</td>";
-forecastHTML = forecastHTML + "<td  ><img src=\"" + ratingpic[2] + "\"><br>"  + ratings[2] + "<br>" +  fcScore[2].toFixed(2) + "</td>";
-forecastHTML = forecastHTML + "<td  ><img src=\"" + ratingpic[3] + "\"><br>"  + ratings[3] + "<br>" +  fcScore[3].toFixed(2) + "</td>";
-//forecastHTML = forecastHTML + "<td  ><img src=\"" + ratingpic[4] + "\"><br>"  + ratings[4] + "<br>" +  fcScore[4].toFixed(2) + "</td>";
-forecastHTML = forecastHTML + "</table>";
+forecastHTML = forecastHTML + "<div id=\"theforecast\">";
+
+	forecastHTML = forecastHTML + "<div class=\"forecasting\">";
+		forecastHTML = forecastHTML + "<div class=\"fcheader\">Today</div>";
+		forecastHTML = forecastHTML + "<div class=\"fcrating\"><img src=\"" + ratingpic[0] + "\"><br>"  + ratings[0] + "<br>" +  fcScore[0].toFixed(2) + "</div>";
+	forecastHTML = forecastHTML + "</div>";
+	
+	forecastHTML = forecastHTML + "<div class=\"forecasting\">";
+		forecastHTML = forecastHTML + "<div class=\"fcheader\">Tomorrow</div>";
+		forecastHTML = forecastHTML + "<div class=\"fcrating\"><img src=\"" + ratingpic[1] + "\"><br>"  + ratings[1] + "<br>" +  fcScore[1].toFixed(2) + "</div>";
+	forecastHTML = forecastHTML + "</div>";
+
+	forecastHTML = forecastHTML + "<div class=\"forecasting\">";
+		forecastHTML = forecastHTML + "<div class=\"fcheader\">" + day3 + "</div>";
+		forecastHTML = forecastHTML + "<div class=\"fcrating\"><img src=\"" + ratingpic[2] + "\"><br>"  + ratings[2] + "<br>" +  fcScore[2].toFixed(2) + "</div>";
+	forecastHTML = forecastHTML + "</div>";
+
+	forecastHTML = forecastHTML + "<div class=\"forecasting\">";
+		forecastHTML = forecastHTML + "<div class=\"fcheader\">" + day4 + "</div>";
+		forecastHTML = forecastHTML + "<div class=\"fcrating\"><img src=\"" + ratingpic[3] + "\"><br>"  + ratings[3] + "<br>" +  fcScore[3].toFixed(2) + "</div>";
+	forecastHTML = forecastHTML + "</div>";
+
+	forecastHTML = forecastHTML + "<div class=\"forecasting\">";
+		forecastHTML = forecastHTML + "<div class=\"fcheader\">" + day5 + "</div>";
+		forecastHTML = forecastHTML + "<div class=\"fcrating\"><img src=\"" + ratingpic[4] + "\"><br>"  + ratings[4] + "<br>" +  fcScore[3].toFixed(2) + "</div>";
+	forecastHTML = forecastHTML + "</div>";
+	
+forecastHTML = forecastHTML + "</div>";
 
 $('#forecastforcity').html(forecastHTML);
 }
