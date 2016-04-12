@@ -71,8 +71,9 @@
     <!--
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     -->
+
+
     
-    <plugin name="nl.x-services.plugins.socialsharing" spec="4.3.8" source="pgb" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
