@@ -1,34 +1,12 @@
 ############################################
-## 1.0.3 STILL FIGURING THINGS OUT
+## 1.2.2 UPDATED LOGO 2016-04-11
 ############################################
-redid city locator
-updating css for form
-making header link to pda home page
-added this file, versions.txt
+Just a minor thing, typo on banner!
 
 ############################################
-## 1.0.4 GETTING LOCATION, SUBMITTING
+## 1.2.1 FORECAST LAYOUT UPDATE 2016-04-08
 ############################################
-Updated site to work off of api, single page app
-Updated template with hamburger menu on left
-Added recent ragers for your area
-Fixed issue with getting location.
-Added Google Key
-
-############################################
-## 1.1 GETTING FORECAST FOR CITY TO WORK
-############################################
-Current version now supports forecasting, 
-and is considered "complete". 
-New banner
-
-
-############################################
-## 1.1.2 MISC UPDATES/FIXES
-############################################
-Updating Cordova code
-Minor URL change access content from monkeymeter.com
-
+Updated icons and layout for forecast content
 
 ############################################
 ## 1.2.0 MISC UPDATES/FIXES
@@ -40,6 +18,42 @@ Added key to page so users understand rating/points
 Moved code to git
 
 ############################################
-## 1.2.1 FORECAST LAYOUT UPDATE
+## 1.1.2 MISC UPDATES/FIXES
 ############################################
-Updated icons and layout for forecast content
+Updating Cordova code
+Minor URL change access content from monkeymeter.com
+
+############################################
+## 1.1 GETTING FORECAST FOR CITY TO WORK
+############################################
+Current version now supports forecasting, 
+and is considered "complete". 
+New banner
+
+############################################
+## 1.0.4 GETTING LOCATION, SUBMITTING
+############################################
+Updated site to work off of api, single page app
+Updated template with hamburger menu on left
+Added recent ragers for your area
+Fixed issue with getting location.
+Added Google Key
+
+
+############################################
+## 1.0.3 STILL FIGURING THINGS OUT
+############################################
+redid city locator
+updating css for form
+making header link to pda home page
+added this file, versions.txt
+
+
+
+
+
+
+
+
+
+
