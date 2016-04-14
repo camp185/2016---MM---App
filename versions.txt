@@ -1,4 +1,13 @@
 ############################################
+## 1.2.3 ADDED RECENT RATINGS PAGE FOR ALL LOCATIONS 2016-04-14
+############################################
+New - Added recent ratings page for all locations.
+Code clean up on home page.
+Fixed css issue for long pages.
+Added reload function/link to home page to update all content and location
+Modified menu for clarification, and adding link to Recent Ratings - All for new page.
+
+############################################
 ## 1.2.2 UPDATED LOGO 2016-04-11
 ############################################
 Just a minor thing, typo on banner!
