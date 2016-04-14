@@ -7,12 +7,14 @@
 #banner {position:relative; top:4em;left:10px;}
 
 .maincontent {background-color:#fff; padding:10px 10px 20px 10px; }
-.pages {min-height: 1500px;position:relative; top:4em;display:block;padding-bottom:40px;}
+.pages {position:relative; top:4em;display:block;padding-bottom:40px;}
 .trend {margin:10px 0;}
 #forecastbyday {border-collapse: collapse;}
 #forecastbyday td {border:1px solid black; padding:5px; text-align:center; width:18%; }
 .sponsor {margin:20px 0;}
 #news {display:inline-block; width:100%;}
+#usrecentragers td {vertical-align:top; padding:2px;}
+
 /*
 #############################################
 ## MENU AND SLIDE EFFECT
