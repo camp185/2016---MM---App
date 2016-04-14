@@ -36,9 +36,10 @@
        <div class="app">
 			<ul class="navigation">
 				<li class="nav-item"><a href="#" id="rate">Rate Your Road Rage!</a></li>
-				<li class="nav-item"><a href="#" id="topragers">Top Raging Cites</a></li>
-				<li class="nav-item"><a href="#" id="recent">Recent Ratings</a></li>
-				<li class="nav-item"><a href="#" id="forecast" onclick="getForecast()">Road Rage Forecast</a></li>
+				<li class="nav-item"><a href="#" id="topragers">Top Raging Cities</a></li>
+				<li class="nav-item"><a href="#" id="recentusragers" onclick="getUSratings()">Recent Ratings - All</a></li>
+				<li class="nav-item"><a href="#" id="recent">Recent Ratings - Local</a></li>
+				<li class="nav-item"><a href="#" id="forecast" onclick="getForecast()">Raging Forecast - Local</a></li>
 				<li class="nav-item"><a href="#" id="news">Recent News</a></li>
 			</ul>
 			
@@ -58,8 +59,6 @@
 					<p>Vent a little, and share today's experience with a quick road rage rating. </p>
 					<p>DO NOT USE THIS APP WHILE DRIVING! C'MON.</p>
 				
-
-			
 					<form method="post" action="" name="mobile">
 						<input type="hidden" name="ref" value="mobile">
 
@@ -92,17 +91,44 @@
 
 						<p><input class="fsSubmitButton" type="submit" value="Rate your city" name="raterage" id="raterage"></p>		
 					</form>
+					<script>submitRage();	</script>
+					
+					<p style="margin:20px 0"><a href="#" onclick="location.reload()">Refresh App Contents and Location</a></p>
+					<p><i>Please make sure GPS is on if your location is not loading</i>.</p>
+				</div>
+				
+				<div id="topragerspage" class="pages">
+					<h2>Top Raging Cities</h2>
+					<p>Ratings from users like you are what makes this possible.</p>
+					<div id="topragerspagehtml"></div>
+					<h3>Ratings Defined</h3>
+					<ul style="list-style:none;">
+						<li>1 - 2 Low</li>
+						<li>2 - 3 Ave</li>
+						<li>3 - 4 High</li>
+						<li>4 - 5 Dangerous</li>
+					</ul>
+					<div class="sponsor"></div>
 				</div>
 
-				<script>
-				submitRage();
 				
-				</script>
-				
+				<div id="recentusragerspage" class="pages">
+					<h2>Recent Ratings - All</h2>
+					<p>Ratings from users like you are what makes this possible. Data is updated every 15 minutes. <a href="#" name="updateratings" onclick="getUSratings();">Refresh</a></p>
+					<div id="recentusratings"></div>
+					<h3>Ratings Defined</h3>
+					<ul style="list-style:none;">
+						<li>1 - 2 Low</li>
+						<li>2 - 3 Ave</li>
+						<li>3 - 4 High</li>
+						<li>4 - 5 Dangerous</li>
+					</ul>							
+					<div class="sponsor"></div>				
+				</div>							
+
 				<div id="recentragers" class="pages">
-				<h2>Recent Road Ragers</h2>
-					<p>Recent ratings in your area. Data is updated every 15 minutes.</p>
-					<p><a href="#" name="updateratings" onclick="getScores();">Refresh</a></p>
+					<h2>Recent Ratings - Local</h2>
+					<p>Ratings from users like you are what makes this possible. Data is updated every 15 minutes. <a href="#" name="updateratings" onclick="getScores();">Refresh</a></p>
 					<div id="recentscores"></div>
 					<h3>Ratings Defined</h3>
 					<ul style="list-style:none;">
@@ -115,7 +141,7 @@
 				</div>
 				
 				<div id="forecastpage" class="pages">
-				<h2>Road Rage Forecast</h2>
+					<h2>Road Rage Forecast - Local</h2>
 					<p>Ratings from users like you are what makes this possible.</p>
 					<div id="forecastforcity"></div>
 					<h3>Ratings Defined</h3>
@@ -128,26 +154,14 @@
 					<div class="sponsor"></div>
 				</div>
 				
-				<div id="topragerspage" class="pages">
-				<h2>Top Raging Cities</h2>
-					<p>Ratings from users like you are what makes this possible.</p>
-					<div id="topragerspagehtml"></div>
-					<h3>Ratings Defined</h3>
-					<ul style="list-style:none;">
-						<li>1 - 2 Low</li>
-						<li>2 - 3 Ave</li>
-						<li>3 - 4 High</li>
-						<li>4 - 5 Dangerous</li>
-					</ul>
-					<div class="sponsor"></div>
-				</div>
+
 				
 				
 				<div id="newspage" class="pages">
 				
-				<h2>Recent News</h2>
-					<div id="newsfeed">Reading News Feed...</div>
-					<div class="sponsor"></div>
+					<h2>Recent News</h2>
+						<div id="newsfeed">Reading News Feed...</div>
+						<div class="sponsor"></div>
 				</div>
 				
 			</div>  
@@ -159,7 +173,7 @@
 		<script>
 		showPageContent();
 		</script>				
-		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=ChevyImpala"></script> 
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAQhU7cZppve1qjiR6P_-twtXG0CMuh43o"></script> 
 		<script type="text/javascript"> 
 		//making links open in new device default browser
 		$("#newsfeed").load("http://www.monkeymeter.com/json/get-news.php");
@@ -233,6 +247,8 @@
 
 
 		</script> 
+		
+
 
         <!-- //
         https://developers.google.com/maps/documentation/javascript/geocoding#GeocodingAddressTypes 
