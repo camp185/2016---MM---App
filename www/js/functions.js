@@ -38,6 +38,7 @@ function showPageContent(){
 		$("#forecastpage").css("display", "none");
 		$("#newspage").css("display", "none");
 		$("#topragerspage").css("display", "none");
+		$("#recentusragerspage").css("display", "none");
 		$(document).ready(function(){
 				
 				$("#rate").click(function(){
@@ -63,7 +64,12 @@ function showPageContent(){
 				$("#news").click(function(){
 				$(".pages").css("display", "none");
 				$("#newspage").css("display", "inline-block");
-			});					
+			});		
+
+				$("#recentusragers").click(function(){
+				$(".pages").css("display", "none");
+				$("#recentusragerspage").css("display", "inline-block");
+			});				
 		});
 }
 
@@ -297,7 +303,41 @@ $('#forecastforcity').html(forecastHTML);
 
 
 
+////////////////////////////////////////////////
+//SHOW RECENT RAGERS THROUGHOUT US
+////////////////////////////////////////////////
 
-
-
+function getUSratings(){
+	var recentHTML = "<table id='usrecentragers' border='0' cellpadding='3' style='margin-bottom:20px;'><tbody>";
+	var abc = Math.random();
 	
+	$.ajax({
+		url: "http://www.monkeymeter.com/json/scores.json?refresh=" + abc,
+		//force to handle it as text
+		dataType: "text",
+		success: function(data) {
+			
+			//data downloaded so call parseJSON function 
+			//and pass downloaded data
+			var json = $.parseJSON(data);
+			
+			//get recent data for the city the user is in
+			var x = json.scores.length;
+						
+			for (var i = 0; i < 100; i++){
+				
+
+					var gw = 20*json.scores[i].score; //graph
+		            var z = json.scores[i].score * 1;
+					
+						recentHTML =  recentHTML + "<tr><td width='175'>"+json.scores[i].city+"</td><td width='175'>"+json.scores[i].when+"</td><td>"+json.scores[i].score+" <img border='0' src='img/graph.jpg' width='"+gw+"' height='10' alt='"+json.scores[i].score+"'></td></tr>"; 		
+
+
+			}
+			recentHTML = recentHTML + "</tbody></table>";
+			$('#recentusratings').html(recentHTML+"<p>&nbsp;</p>");
+					
+		}
+	});
+	
+}
