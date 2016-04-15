@@ -1,4 +1,9 @@
 ############################################
+## 1.3.1, A64 REMOVED TIME STAMP
+############################################
+Removed time stamp from Recent Ratings - All
+
+############################################
 ## 1.3.0, A65 ADDED RECENT RATINGS PAGE FOR ALL LOCATIONS 2016-04-14
 ############################################
 New - Added recent ratings page for all locations.
