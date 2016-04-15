@@ -329,8 +329,10 @@ function getUSratings(){
 
 					var gw = 20*json.scores[i].score; //graph
 		            var z = json.scores[i].score * 1;
+					//show only year
+					json.scores[i].when = json.scores[i].when.slice(0,10); 
 					
-						recentHTML =  recentHTML + "<tr><td width='175'>"+json.scores[i].city+"</td><td width='175'>"+json.scores[i].when+"</td><td>"+json.scores[i].score+" <img border='0' src='img/graph.jpg' width='"+gw+"' height='10' alt='"+json.scores[i].score+"'></td></tr>"; 		
+						recentHTML =  recentHTML + "<tr><td width='200'>"+json.scores[i].city+"</td><td width='90'>"+json.scores[i].when+"</td><td>"+json.scores[i].score+" <img border='0' src='img/graph.jpg' width='"+gw+"' height='10' alt='"+json.scores[i].score+"'></td></tr>"; 		
 
 
 			}
