@@ -3,6 +3,7 @@
 ############################################
 Recent Ratings - All page was wrapping date. Fixed.
 Also made score show up in bold.
+Fixed Hamburger menu vanishing issue
 
 ############################################
 ## 1.3.2, A67 REMOVED TIME STAMP
