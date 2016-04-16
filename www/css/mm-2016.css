@@ -78,7 +78,7 @@ label[for="nav-trigger"] {
 }
 
 .nav-trigger:checked + label {
-    left: 215px;
+    left: 265px;
 
 }
 
