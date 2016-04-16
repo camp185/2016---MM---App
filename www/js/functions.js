@@ -308,7 +308,7 @@ $('#forecastforcity').html(forecastHTML);
 ////////////////////////////////////////////////
 
 function getUSratings(){
-	var recentHTML = "<table id='usrecentragers' border='0' cellpadding='3' style='margin-bottom:20px;'><tbody>";
+	var recentHTML = "<table id='usrecentragers' border='0' cellpadding='3' style='margin-bottom:20px; font-size:85%;width=100%;'><tbody>";
 	var abc = Math.random();
 	
 	$.ajax({
@@ -327,12 +327,12 @@ function getUSratings(){
 			for (var i = 0; i < 100; i++){
 				
 
-					var gw = 20*json.scores[i].score; //graph
+					var gw = 8*json.scores[i].score; //graph
 		            var z = json.scores[i].score * 1;
 					//show only year
 					json.scores[i].when = json.scores[i].when.slice(0,10); 
 					
-						recentHTML =  recentHTML + "<tr><td width='180'>"+json.scores[i].city+"</td><td width='100'>"+json.scores[i].when+"</td><td><span style='font-weight:bold;'>"+json.scores[i].score+"</span> <img border='0' src='img/graph.jpg' width='"+gw+"' height='10' alt='"+json.scores[i].score+"'></td></tr>"; 		
+						recentHTML =  recentHTML + "<tr><td width='160'>"+json.scores[i].city+"</td><td width='150' style='white-space: nowrap;'>"+json.scores[i].when+"</td><td><span style='font-weight:bold;'>"+json.scores[i].score+"</span></td><td width='45'> <img border='0' src='img/graph.jpg' width='"+gw+"' height='10' alt='"+json.scores[i].score+"'></td></tr>"; 		
 
 
 			}
