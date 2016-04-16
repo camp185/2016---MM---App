@@ -332,7 +332,7 @@ function getUSratings(){
 					//show only year
 					json.scores[i].when = json.scores[i].when.slice(0,10); 
 					
-						recentHTML =  recentHTML + "<tr><td width='160'>"+json.scores[i].city+"</td><td width='150' style='white-space: nowrap;'>"+json.scores[i].when+"</td><td><span style='font-weight:bold;'>"+json.scores[i].score+"</span></td><td width='45'> <img border='0' src='img/graph.jpg' width='"+gw+"' height='10' alt='"+json.scores[i].score+"'></td></tr>"; 		
+						recentHTML =  recentHTML + "<tr><td width='160'>"+json.scores[i].city+"</td><td width='100' style='white-space: nowrap;'>"+json.scores[i].when+"</td><td><span style='font-weight:bold;'>"+json.scores[i].score+"</span></td><td width='45'> <img border='0' src='img/graph.jpg' width='"+gw+"' height='10' alt='"+json.scores[i].score+"'></td></tr>"; 		
 
 
 			}
