@@ -1,4 +1,14 @@
 ############################################
+## WISH LIST
+############################################
+Make monkeys smaller on forecast page
+New Banner
+
+############################################
+## 1.3.4, A69 FIXED MINOR ISSUE ON RECENT RATINGS PAGE
+############################################
+
+############################################
 ## 1.3.3, A68 FIXED MINOR ISSUE ON RECENT RATINGS PAGE
 ############################################
 Recent Ratings - All page was wrapping date. Fixed.
