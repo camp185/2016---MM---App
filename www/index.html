@@ -216,7 +216,7 @@
 				if (status === google.maps.GeocoderStatus.OK) {
 					if (results[0]) {
 					//for (var i = 0; i < results.length; i++) {
-                        //if (results[i].types[0] === "locality") {
+                        if (results[i].types[0] === "locality") {
 
                             city 	= results[0].address_components[3].short_name;
                             var state 	= results[0].address_components[5].short_name;
@@ -231,7 +231,7 @@
 							var sponsorCity = city.replace(/ /g, '%20');
 							$(".sponsor").load("http://www.monkeymeter.com/json/get-sponsors.php?city="+sponsorCity );
 
-                       // }
+                        }
                     //}
 
 					
