@@ -4,8 +4,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.MonkeyMeter"
-        version   = "1.3.3"
-        android-versionCode="68"
+        version   = "1.3.4"
+        android-versionCode="69"
         >
 
     <name>Monkey Meter</name>
